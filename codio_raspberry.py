@@ -9,13 +9,17 @@ while True:
     try:
         temp,hum = dht(dht_sensor_port,0)
 
-        print ("temp =", temp, "C\thumadity", hum, "%")
+
+        print("temp =", temp, "C\thumadity", hum, "%")
         t = str(temp)
         h = str(hum)
 
-        setRGB(0,128,64)
-        setRGB(0,255,0)
-        setText("Temp:" + t + "C " + "Humidity :" + h + "%")
+
+        setRGB(255,255,255)
+        setText("Temp:" + t + "C " + "Humedad :" + h + "%")
+
+        time.sleep(1)
 
     except (IOError,TypeError) as e:
-        print ("Error")
+        print("Error", e)
+        time.sleep(1)
